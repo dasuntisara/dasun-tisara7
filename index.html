@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dasun Tisara — Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dasun Tisara — Web Developer & Founder of DiSSMaC Global">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- Particle canvas -->
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-wrap">
+
+<!-- ══════════ HERO ══════════ -->
+<section class="frist">
+    <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        University of Colombo &nbsp;·&nbsp; CS Undergraduate
+    </div>
+
+    <div class="hero-name" id="hero-name">
+        <span class="line" data-text="DASUN">
+            <span class="name-stroke" aria-hidden="true">DASUN</span>
+            <span class="name-gradient">DASUN</span>
+        </span>
+        <span class="line" data-text="TISARA.">
+            <span class="name-stroke" aria-hidden="true">TISARA.</span>
+            <span class="name-gradient">TISARA.</span>
+        </span>
+    </div>
+
+    <p class="hero-tag">
+        Web Developer &nbsp;/&nbsp;
+        <span class="accent">DiSSMaC Global</span>
+    </p>
+
+    <div class="founder-tag">
+        <div class="founder-tag-bar"></div>
+        <div class="founder-tag-info">
+            <span class="sub">Member of</span>
+            <span class="main"><span>DiSSMaC Global</span> · One Vision. Limitless Reach.</span>
+        </div>
+    </div>
+
+    <div class="scroll-hint">
+        <p>Scroll</p>
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+</section>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="f_tabs">
+    <a href="index.html" class="active">
+        <button class="tab"><span class="tab-icon">🏠</span><span class="tab-text">Home</span></button>
+    </a>
+    <a href="about.html">
+        <button class="tab"><span class="tab-icon">👤</span><span class="tab-text">About</span></button>
+    </a>
+    <a href="portfolio.html">
+        <button class="tab"><span class="tab-icon">💼</span><span class="tab-text">Portfolio</span></button>
+    </a>
+    <a href="contact.html">
+        <button class="tab"><span class="tab-icon">📧</span><span class="tab-text">Contact</span></button>
+    </a>
+</nav>
+
+<!-- ══════════ CARDS ══════════ -->
+<div class="about-last">
+    <button class="about" onclick="location.href='about.html'">
+        <span class="card-num">01</span>
+        <span class="a-icon">👤</span>
+        <span class="a-text">About Me</span>
+        <h3>Skills, experience &amp; who I am</h3>
+    </button>
+    <button class="Portfolio" onclick="location.href='portfolio.html'">
+        <span class="card-num">02</span>
+        <span class="b-icon">💼</span>
+        <span class="b-text">Portfolio</span>
+        <h3>My latest projects &amp; work</h3>
+    </button>
+    <button class="contac" onclick="location.href='contact.html'">
+        <span class="card-num">03</span>
+        <span class="c-icon">📧</span>
+        <span class="c-text">Contact</span>
+        <h3>Let's connect &amp; build together</h3>
+    </button>
+</div>
+
+</div><!-- .page-wrap -->
+<script src="animations.js"></script>
+</body>
+</html>

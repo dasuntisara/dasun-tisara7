@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact — Dasun Tisara</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-wrap">
+
+<h1 class="contact">CONTACT</h1>
+<span class="page-label">Let's Build Something Together</span>
+
+<nav class="f_tabs">
+    <a href="index.html"><button class="tab"><span class="tab-icon">🏠</span><span class="tab-text">Home</span></button></a>
+    <a href="about.html"><button class="tab"><span class="tab-icon">👤</span><span class="tab-text">About</span></button></a>
+    <a href="portfolio.html"><button class="tab"><span class="tab-icon">💼</span><span class="tab-text">Portfolio</span></button></a>
+    <a href="contact.html" class="active"><button class="tab"><span class="tab-icon">📧</span><span class="tab-text">Contact</span></button></a>
+</nav>
+
+<div class="from reveal">
+    <form action="dasun.php" method="get" autocomplete="off">
+        <h2>Send a Message</h2>
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com" required>
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+94 7X XXX XXXX" required>
+        <label for="add">Message</label>
+        <textarea id="add" name="add" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+        <div class="f-buttons">
+            <input type="submit" value="Send Message →">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+</div>
+
+<div class="ver">
+    <div class="email reveal">
+        <h2>📧</h2>
+        <h2>Email</h2>
+        <h3>dasuntisara5@gmail.com</h3>
+    </div>
+    <div class="phone reveal" style="transition-delay:100ms">
+        <h2>☎️</h2>
+        <h2>Phone</h2>
+        <h3>WhatsApp: 074 119 4259</h3>
+        <h3>Tel: 072 687 1140</h3>
+    </div>
+    <div class="location reveal" style="transition-delay:200ms">
+        <h2>🌏</h2>
+        <h2>Location</h2>
+        <h3>Urubokka, Sri Lanka</h3>
+    </div>
+</div>
+
+</div>
+<script src="animations.js"></script>
+</body>
+</html>
