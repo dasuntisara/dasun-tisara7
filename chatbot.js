@@ -27,7 +27,7 @@
     ANTHROPIC_KEY : "YOUR_API_KEY_HERE",    // paste your key from console.anthropic.com
     NTFY_TOPIC    : "dasun_portfolio_2025", // any unique name — same as what you subscribed to in ntfy app
   };
-
+ANTHROPIC_KEY : "YOUR_API_KEY_HERE",
   /* ══════════════════════════════════════════════════
      📋  DASUN'S PERSONAL INFO (bot uses this)
   ════════════════════════════════════════════════════ */
