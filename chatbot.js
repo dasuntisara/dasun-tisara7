@@ -25,9 +25,9 @@
   ════════════════════════════════════════════════════ */
   const CONFIG = {
     ANTHROPIC_KEY : "YOUR_API_KEY_HERE",    // paste your key from console.anthropic.com
-    NTFY_TOPIC    : "dasun_portfolio_2025", // any unique name — same as what you subscribed to in ntfy app
+    NTFY_TOPIC    : "dasun_portfolio_2025", // IMPORTANT: must match exactly what you typed in ntfy app
   };
-ANTHROPIC_KEY : "YOUR_API_KEY_HERE",
+
   /* ══════════════════════════════════════════════════
      📋  DASUN'S PERSONAL INFO (bot uses this)
   ════════════════════════════════════════════════════ */
@@ -170,16 +170,21 @@ Always respond in the same language the user writes in (English or Sinhala).
       `"${message}"`;
 
     try {
-      await fetch(`https://ntfy.sh/${CONFIG.NTFY_TOPIC}`, {
+      // Build URL with query params (works better with no-cors)
+      const url = new URL(`https://ntfy.sh/${CONFIG.NTFY_TOPIC}`);
+      
+      await fetch(url.toString(), {
         method: "POST",
+        mode: "no-cors",
         headers: {
-          "Title": `📩 New message from ${name}`,
+          "Title": `New contact from ${name}`,
           "Priority": "high",
-          "Tags": "envelope,iphone",
-          "Content-Type": "text/plain; charset=utf-8"
+          "Tags": "envelope",
+          "Content-Type": "text/plain"
         },
         body: body
       });
+      console.log("ntfy sent OK");
     } catch (err) {
       console.warn("ntfy error:", err);
     }
@@ -212,6 +217,7 @@ Always respond in the same language the user writes in (English or Sinhala).
           <span class="chat-header-name">Dasun's AI Assistant</span>
           <span class="chat-header-status">Online · Powered by AI</span>
         </div>
+        <button id="chat-test" title="Test phone notification" style="background:none;border:none;color:rgba(0,255,136,0.5);font-size:14px;cursor:pointer;padding:4px 6px;transition:color 0.2s;" aria-label="Test notification">🔔</button>
         <button id="chat-close" aria-label="Close">✕</button>
       </div>
       <div class="chat-messages" id="chat-messages"></div>
@@ -304,6 +310,30 @@ Always respond in the same language the user writes in (English or Sinhala).
     function closeChat() { open = false; win.classList.remove("open"); }
 
     toggle.addEventListener("click", () => open ? closeChat() : openChat());
+
+    // Test notification button
+    document.getElementById("chat-test")?.addEventListener("click", async () => {
+      if (!CONFIG.NTFY_TOPIC || CONFIG.NTFY_TOPIC === "YOUR_TOPIC") {
+        showToast("⚠️ Set your NTFY_TOPIC in chatbot.js first!", "#ffb830");
+        return;
+      }
+      showToast("📤 Sending test notification...", "var(--neon-b)");
+      try {
+        await fetch(`https://ntfy.sh/${CONFIG.NTFY_TOPIC}`, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Title": "Test from Portfolio",
+            "Tags": "white_check_mark",
+            "Content-Type": "text/plain"
+          },
+          body: "ntfy is working! Your portfolio notifications are set up correctly."
+        });
+        setTimeout(() => showToast("✅ Test sent! Check your phone.", "var(--neon-g)"), 800);
+      } catch(e) {
+        showToast("❌ Could not send. Check your topic name.", "#ff4f7b");
+      }
+    });
     closeBtn.addEventListener("click", closeChat);
 
     /* send */
